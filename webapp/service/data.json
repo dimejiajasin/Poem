@@ -22,6 +22,28 @@
 		"ZipCode": "98052",
 		"Country": "USA"
 	  }
+	},
+	{
+	  "ID":      2,
+	  "Name":    "Bold Believers",
+	  "Address": {
+		"Street":  "1234th Street",
+		"City":    "Snoqualmie",
+		"State":   "WA",
+		"ZipCode": "98065",
+		"Country": "USA"
+	  }
+	},
+	{
+	  "ID":      3,
+	  "Name":    "NorthWinds Inc.",
+	  "Address": {
+		"Street":  "420nd Street",
+		"City":    "North Bend",
+		"State":   "WA",
+		"ZipCode": "98038",
+		"Country": "USA"
+	  }
 	}
   ]
 }
