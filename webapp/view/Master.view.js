@@ -7,7 +7,7 @@ sap.ui.jsview("sapui5.demo.mvcapp.view.Master", {
 
     createContent: function(oController) {
 
-        var aColumns = [
+        let aColumns = [
             new sap.m.Column({
                 header : new sap.m.Text({
                     text : "ID"
@@ -20,7 +20,7 @@ sap.ui.jsview("sapui5.demo.mvcapp.view.Master", {
             })
         ];
 
-        var oTemplate = new sap.m.ColumnListItem({
+        let oTemplate = new sap.m.ColumnListItem({
             type: "Navigation",
             press: [oController.onListPress, oController],
             cells : [
@@ -33,7 +33,7 @@ sap.ui.jsview("sapui5.demo.mvcapp.view.Master", {
             ]
         });
 
-        var oTableHeader = new sap.m.Toolbar({
+        let oTableHeader = new sap.m.Toolbar({
             content : [
                 new sap.m.Title({
                     text : "Number of Suppliers: {/CountSuppliers}"
@@ -41,7 +41,7 @@ sap.ui.jsview("sapui5.demo.mvcapp.view.Master", {
             ]
         });
 
-        var oTable = new sap.m.Table({
+        let oTable = new sap.m.Table({
             columns : aColumns,
             headerToolbar : oTableHeader
         });
@@ -49,7 +49,7 @@ sap.ui.jsview("sapui5.demo.mvcapp.view.Master", {
         oTable.bindItems("/Suppliers", oTemplate);
         oTable.addStyleClass("sapUiResponsiveMargin");
 
-        var oPageMaster = new sap.m.Page({
+        let oPageMaster = new sap.m.Page({
             title : "Supplier Overview",
             content : [oTable]
         });

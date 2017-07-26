@@ -60,11 +60,16 @@
             viewName: "sapui5.demo.mvcapp.view.Master",
         });
 
+        let oPageDetail =sap.ui.view("detailPage", {
+            type: sap.ui.core.mvc.ViewType.JS,
+            viewName: "sapui5.demo.mvcapp.view.Detail",
+        });
+
         let oApp = new sap.m.App({
             initialPage: "masterPage"
         });
 
-        oApp.addPage(oPageMasterView);
+        oApp.addPage(oPageMasterView).addPage(oPageDetail);
         oApp.placeAt("content");
     </script>
 </head>
