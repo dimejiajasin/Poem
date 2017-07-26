@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="openui5" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$USER_HOME$/Downloads/openui5-sdk-1.44.9/resources/sap-ui-core-all-dbg.js" />
+        <item url="file://$USER_HOME$/Downloads/openui5-sdk-1.44.9/resources/sap/m/library-all-dbg.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$USER_HOME$/Downloads/openui5-sdk-1.44.9/resources/sap-ui-core-all-dbg.js" />
+      <root url="file://$USER_HOME$/Downloads/openui5-sdk-1.44.9/resources/sap/m/library-all-dbg.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
