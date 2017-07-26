@@ -8,12 +8,14 @@
             data-sap-ui-libs="sap.m"
             data-sap-ui-theme="sap_bluecrystal"
             data-sap-ui-compatVersion="edge"
+            data-sap-ui-preload="async"
             data-sap-ui-xx-bindingSyntax="complex"
             data-sap-ui-resourceroots='{"sapui5.demo.mvcapp":"./webapp/"}'
-            >
+    >
     </script>
     <script>
         // application data
+        /*
         let oData = {
             "CountSuppliers" : "2",
             "Suppliers":[
@@ -50,6 +52,7 @@
         // so that it is available in the whole application
         sap.ui.getCore().setModel(oModel);
 
+
         // the columns will act as column headers
 
         let oAppView = sap.ui.view({
@@ -57,8 +60,31 @@
             viewName: "sapui5.demo.mvcapp.view.App",
         });
 
-        let oApp=oAppView.byId("app");
-        oAppView.placeAt("content");
+        */
+
+
+        let oApp;
+
+        sap.ui.getCore().attachInit(function () {
+            sap.ui.require([
+                "sap/m/Shell",
+                "sap/ui/core/ComponentContainer",
+                "sapui5/demo/mvcapp/Component"
+            ], function (Shell, ComponentContainer, Component) {
+
+                // initialize the UI component
+                new Shell({
+                    app: new ComponentContainer({
+                        height : "100%",
+                        component : new Component({
+                            id: "mvcAppComponent"
+                        })
+                    })
+                }).placeAt("content");
+            });
+        });
+
+
     </script>
 </head>
 <body class="sapUiBody" role="application">
