@@ -6,49 +6,27 @@ sap.ui.define([
 
     return UIComponent.extend("sapui5.demo.mvcapp.Component", {
 
-        metadata : {
-            "rootView" : "sapui5.demo.mvcapp.view.App"
+        metadata: {
+            "rootView": "sapui5.demo.mvcapp.view.App",
+            "config": {
+                "serviceUrl": "webapp/service/data.json"
+            }
         },
 
-        createContent : function() {
+        createContent: function () {
 
             // call the base component's createContent function
             let oRootView = UIComponent.prototype.createContent.apply(this, arguments);
 
-            let oData = {
-                "CountSuppliers" : "2",
-                "Suppliers":[
-                    {
-                        "ID":0,
-                        "Name":"Exotic Liquids",
-                        "Address":{
-                            "Street":"NE 228th",
-                            "City":"Sammamish",
-                            "State":"WA",
-                            "ZipCode":"98074",
-                            "Country":"USA"
-                        }
-                    },
-                    {
-                        "ID":1,
-                        "Name":"Tokyo Traders",
-                        "Address":{
-                            "Street":"NE 40th",
-                            "City":"Redmond",
-                            "State":"WA",
-                            "ZipCode":"98052",
-                            "Country":"USA"
-                        }
-                    }
-                ]
-            };
 
-            let oModel = new JSONModel();
-            oModel.setData(oData);
+            let oModel = new JSONModel(this.getMetadata().getConfig().serviceUrl);
+            // oModel.setData(oData);
 
             // important to set the model on the component
             // and not on the sapui5 core!!!!
             this.setModel(oModel);
+
+
 
             oApp = oRootView.byId("app");
             return oRootView;
