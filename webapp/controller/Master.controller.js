@@ -7,7 +7,7 @@ sap.ui.define([
 
         onListPress : function(oEvent) {
 
-            let sPageId = "detailPage";
+            let sPageId = oApp.getPages()[1].getId();
             oApp.to(sPageId);
 
             let oPage = oApp.getPage(sPageId);

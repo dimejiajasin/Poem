@@ -50,27 +50,15 @@
         // so that it is available in the whole application
         sap.ui.getCore().setModel(oModel);
 
-//        sap.ui.getCore().setModel(oModel);
-
         // the columns will act as column headers
 
-
-        let oPageMasterView = sap.ui.view("masterPage", {
-            type: sap.ui.core.mvc.ViewType.JS,
-            viewName: "sapui5.demo.mvcapp.view.Master",
+        let oAppView = sap.ui.view({
+            type: sap.ui.core.mvc.ViewType.XML,
+            viewName: "sapui5.demo.mvcapp.view.App",
         });
 
-        let oPageDetail =sap.ui.view("detailPage", {
-            type: sap.ui.core.mvc.ViewType.JS,
-            viewName: "sapui5.demo.mvcapp.view.Detail",
-        });
-
-        let oApp = new sap.m.App({
-            initialPage: "masterPage"
-        });
-
-        oApp.addPage(oPageMasterView).addPage(oPageDetail);
-        oApp.placeAt("content");
+        let oApp=oAppView.byId("app");
+        oAppView.placeAt("content");
     </script>
 </head>
 <body class="sapUiBody" role="application">
