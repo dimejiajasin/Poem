@@ -6,14 +6,11 @@ sap.ui.define([
     return Controller.extend("sapui5.demo.mvcapp.controller.Master", {
 
         onListPress : function(oEvent) {
-
-            let sPageId = oApp.getPages()[1].getId();
-            oApp.to(sPageId);
-
-            let oPage = oApp.getPage(sPageId);
-            let oContext = oEvent.getSource().getBindingContext();
-            oPage.setBindingContext(oContext);
+            let oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+            let oItem = oEvent.getSource();
+            oRouter.navTo("detail", {
+                ID: oItem.getBindingContext().getProperty("ID")
+            });
         }
-        
     });
 });

@@ -10,7 +10,48 @@ sap.ui.define([
             "rootView": "sapui5.demo.mvcapp.view.App",
             "config": {
                 "serviceUrl": "webapp/service/data.json"
+            },
+            "routing": {
+                "config": {
+                    "routerClass": "sap.m.routing.Router",
+                    "viewType": "XML",
+                    "viewPath": "sapui5.demo.mvcapp.view",
+                    "controlId": "app",
+                    "controlAggregation": "pages",
+                    "transition": "slide"
+                },
+
+                "routes": [
+                    {
+                        "pattern": "",
+                        "name": "master",
+                        "target": "master"
+                    },
+                    {
+                        "pattern": "detail/{ID}",
+                        "name": "detail",
+                        "target": "detail"
+                    }
+                ],
+
+                "targets": {
+                    "master": {
+                        "viewName": "Master",
+                        "viewLevel": 1
+                    },
+                    "detail": {
+                        "viewName": "Detail",
+                        "viewLevel": 2
+                    }
+                }
             }
+        },
+        init : function () {
+            // call the base component's init function
+            UIComponent.prototype.init.apply(this, arguments);
+
+            // create the views based on the url/hash
+            this.getRouter().initialize();
         },
 
         createContent: function () {
@@ -26,10 +67,12 @@ sap.ui.define([
             // and not on the sapui5 core!!!!
             this.setModel(oModel);
 
+            // important to set the model on the component
+            // and not on the sapui5 core!!!!
+            this.setModel(oModel);
 
-
-            oApp = oRootView.byId("app");
             return oRootView;
+
         }
     });
 });
