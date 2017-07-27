@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="x-ua-compatible" content="IE=edge" charset="UTF-8">
+    <script id="sap-ui-bootstrap"
+            src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+            data-sap-ui-libs="sap.m"
+            data-sap-ui-theme="sap_bluecrystal">
+
+    </script>
+    <script>
+        sap.ui.getCore().attachInit(function () {
+
+            let onPressImage = function (oEvent) {
+                let sId = oEvent.getSource().getId();
+                console.log(sId);
+                if (sId === "image1") {
+                    alert("Hello Ajasin")
+                }
+                if (sId === "image2") {
+                    alert("Image2 pressed")
+                }
+            };
+
+            let oImage = new sap.m.Image("image1", {
+                src: "img/hills.jpg",
+                decorative: false,
+                alt: "Hills",
+                tooltip: "Mountains are alive",
+                press: onPressImage
+            }).placeAt("content");
+
+            let oImage2 = new sap.m.Image("image2", {
+                src: "img/email.png",
+                decorative: false,
+                tooltip: "Email",
+                alt: "Email",
+                press: onPressImage
+            }).placeAt("content");
+
+
+
+        })
+    </script>
+    <title>Title</title>
+</head>
+<body class="sapUiBody" id="content">
+<h1>Dimeji</h1>
+</body>
+</html>

@@ -9,7 +9,10 @@
         <content>
             <ObjectHeader number="ID: {ID}" title="{Name}">
                 <attributes>
-                    <ObjectAttribute text="{Address/Country}"></ObjectAttribute>
+                    <ObjectAttribute text="Street: {Address/Street}"></ObjectAttribute>
+                    <ObjectAttribute text="City: {Address/City}"></ObjectAttribute>
+                    <ObjectAttribute text="ZipCode: {Address/ZipCode}"></ObjectAttribute>
+                    <ObjectAttribute text="Country: {Address/Country}"></ObjectAttribute>
                 </attributes>
             </ObjectHeader>
         </content>
