@@ -1,4 +1,9 @@
-# Hello-Dimeji
-A Year later I am learning how to GitHub....
+# Radio-Racin
 
-Looking at integrating software and architecture. Virtual and Augmented Reality for Entertainment, Education and Architecture. Internet of things and virtual learning.
+### Introduction
+
+This will give a background to the concept behind the Radio Racing company!
+
+Looking at integrating software, architecture and Cloud development. 
+Virtual and Augmented Reality for Entertainment, Education and Architecture. 
+1. Internet of things and virtual learning.
